@@ -1,6 +1,7 @@
-package hcl.hackthon.interview.controller;
+package hcl.hackthon.interview.model;
 
-public class UserController {
+public class UserModel {
+	
 	private String name;
 	private Long id;
 

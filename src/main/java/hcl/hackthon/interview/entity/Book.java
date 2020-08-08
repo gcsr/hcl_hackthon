@@ -10,6 +10,23 @@ public class Book {
 	
 	@Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Long isbnNo;;
+	private int qty;
+	public Long getIsbnNo() {
+		return isbnNo;
+	}
+	public void setIsbnNo(Long isbnNo) {
+		this.isbnNo = isbnNo;
+	}
+	public int getQty() {
+		return qty;
+	}
+	public void setQty(int qty) {
+		this.qty = qty;
+	}
+	
+	
+	
+	
 
 }

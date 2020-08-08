@@ -5,9 +5,9 @@ import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import hcl.hackthon.interview.entity.Book;
+import hcl.hackthon.interview.entity.User;
 
 @Repository
-public interface BookRepository extends JpaRepository<Book, Long>{
-	Optional<Book> findByIsbnNo(Long isbnNo);
+public interface UserRepository extends JpaRepository<User, Long>{
+	Optional<User> findById(Long id);
 }
