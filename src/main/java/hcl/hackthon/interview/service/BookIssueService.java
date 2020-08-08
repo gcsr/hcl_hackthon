@@ -67,7 +67,7 @@ public class BookIssueService {
 	}
 	public BookIssue issueBook(Long bookISBN, Long userId) throws Exception {		
 		logger.info("Entered BookIssueService.issueBook",bookISBN,userId);
-		BookIssue exist = getBookIssue(bookISBN,userId);
+		Object exist = getBookIssue(bookISBN,userId);
 		if(null!=exist)
 			throw new AppException(BOOKALREADYISSUED,BOOKALREADYISSUED_MESSAGE);
 		final AppException error= new AppException("message");
@@ -121,10 +121,10 @@ public class BookIssueService {
 	@PersistenceContext
 	private EntityManager em;
 
-	public BookIssue getBookIssue(Long bookId,Long userNo) {
+	public Object getBookIssue(Long bookId,Long userNo) {
 		String queryString = "select bu.* from BOOK_ISSUE bu where bu.BOOK_ISBN_NO="+bookId+" and bu.USER_ID="+userNo;
 		Query query = em.createNativeQuery(queryString);
-		List<BookIssue>  list = query.getResultList();
+		List<Object>  list = query.getResultList();
 		if(list.size()>0)
 			return list.get(0);
 		return null ;

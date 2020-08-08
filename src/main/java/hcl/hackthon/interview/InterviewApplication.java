@@ -30,7 +30,7 @@ public class InterviewApplication implements ApplicationContextAware{
 		logger.info("this is a info message");
 		logger.warn("this is a warn message");
 		logger.error("this is a error message");
-		logger.debug("this is debug message");
+		logger.debug("this is debug message creating data");
 		SpringApplication.run(InterviewApplication.class, args);
 		BookRepository br = (BookRepository)applicationContext.getBean(BookRepository.class);
 		Book b = new Book();
